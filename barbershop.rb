@@ -11,12 +11,13 @@ post '/' do
    @user_name = params[:user_name]
    @phone = params[:phone]
    @date_time = params[:date_time]
+   @barber = params[:barber]
 
    @title="Thank You"
-   @message = "Dear #{@user_name}, we'll be waiting for you at #{@date_time} "
+   @message = "Dear #{@user_name}, we'll be waiting for you at #{@date_time}, barber - #{@barber} "
 # запишем в файл то, что ввёл клиент
    f = File.open './public/user.txt','a'
-   f.write "User: #{@user_name},Phone: #{@phone}, Date and time: #{@date_time} \n"
+   f.write "User: #{@user_name}, phone: #{@phone}, date&time: #{@date_time}, Barber: #{@barber}.\n"
    f.close
    erb :message
 end
