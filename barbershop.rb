@@ -43,6 +43,11 @@ post '/admin' do
       erb :admin
    end
 end
+
 get '/about' do
    erb :about
+end
+
+get '/visit' do
+   erb :visit
 end
