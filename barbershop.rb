@@ -12,6 +12,7 @@ post '/' do
    @phone = params[:phone]
    @date_time = params[:date_time]
    @barber = params[:barber]
+   @color = params[:color]
 
    @title="Thank You"
    @message = "Dear #{@user_name}, we'll be waiting for you at #{@date_time}, barber - #{@barber} "
@@ -50,5 +51,9 @@ get '/about' do
 end
 
 get '/visit' do
+   erb :visit
+end
+
+post '/visit' do
    erb :visit
 end
