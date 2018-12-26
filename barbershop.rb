@@ -9,6 +9,10 @@ end
 # спросим Имя, номер телефона и дату, когда придёт клиент.
 post '/' do
    @user_name = params[:user_name]
+   if @user_name == ''
+      @error ='Введите имя'
+      return erb :index
+   end
    @phone = params[:phone]
    @date_time = params[:date_time]
    @barber = params[:barber]
